@@ -11,16 +11,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -29,6 +19,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
                 "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Fieldset>",
+                "defaultValue": "{\r\n  title: 'Example/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
             },
             {
                 "name": "preview",
@@ -51,6 +51,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -59,16 +69,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -83,21 +83,22 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Fieldset>",
+                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
             }
         ],
         "enumerations": [],
         "groupedVariables": {
             "projects/vault-lib/src/stories/composents/button/button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'large',\r\n    label: 'Button',\r\n  },\r\n}"
-                },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
@@ -127,16 +128,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    label: 'Button',\r\n  },\r\n}"
-                },
+                }
+            ],
+            "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts": [
                 {
-                    "name": "Small",
+                    "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Fieldset>",
+                    "defaultValue": "{\r\n  title: 'Example/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 }
             ],
             "projects/vault-lib/.storybook/preview.ts": [
@@ -162,6 +175,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Fieldset>",
+                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -194,16 +220,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -231,16 +247,36 @@
             },
             {
                 "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
-                "type": "variable",
+                "type": "type alias",
                 "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
+                "linksubtype": "typealias",
+                "name": "Story",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
