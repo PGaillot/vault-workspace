@@ -26,6 +26,36 @@
           "options": {
             "tsConfig": "projects/vault-lib/tsconfig.spec.json"
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/vault-lib/.storybook",
+            "browserTarget": "vault-lib:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/vault-lib"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/vault-lib/.storybook",
+            "browserTarget": "vault-lib:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/vault-lib"
+            ],
+            "outputDir": "storybook-static"
+          }
         }
       }
     }
