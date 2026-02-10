@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-vault-lib',
+  selector: 'vault-vault-lib',
   imports: [],
   template: `
     <p>

@@ -1,0 +1,6 @@
+// Import des styles partagés
+@import '../../../lib/styles/index';
+
+fieldset {
+    border-color: $primary;
+}

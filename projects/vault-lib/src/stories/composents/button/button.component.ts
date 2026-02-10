@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
+  selector: 'vault-button',
   standalone: true,
   imports: [CommonModule],
   styleUrl: './button.scss',

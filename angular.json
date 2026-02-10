@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/vault-lib",
       "sourceRoot": "projects/vault-lib/src",
-      "prefix": "lib",
+      "prefix": "vault",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",

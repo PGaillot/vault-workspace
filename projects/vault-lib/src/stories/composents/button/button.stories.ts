@@ -21,15 +21,9 @@ export default meta;
 type Story = StoryObj<ButtonComponent>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     primary: true,
-    label: 'Button',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
     label: 'Button',
   },
 };
