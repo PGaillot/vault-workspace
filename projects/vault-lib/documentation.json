@@ -14,41 +14,41 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {},\r\n}"
+                "defaultValue": "{\n  args: {},\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
-                "defaultValue": "{\r\n  title: 'Example/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+                "defaultValue": "{\n  title: 'Example/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
             },
             {
                 "name": "preview",
@@ -58,7 +58,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
             }
         ],
         "functions": [],
@@ -68,7 +68,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -79,7 +79,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -88,48 +88,48 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/vault-lib/src/stories/composents/button/button.stories.ts": [
+            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
                 }
             ],
-            "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts": [
+            "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {},\r\n}"
+                    "defaultValue": "{\n  args: {},\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Fieldset>",
-                    "defaultValue": "{\r\n  title: 'Example/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\r\n  args: { onClick: fn() },\r\n}"
+                    "defaultValue": "{\n  title: 'Example/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
                 }
             ],
             "projects/vault-lib/.storybook/preview.ts": [
@@ -141,33 +141,33 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/vault-lib/src/stories/composents/button/button.stories.ts": [
+            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts": [
+            "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Fieldset>",
-                    "file": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -196,7 +196,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -206,7 +206,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -216,7 +216,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -226,7 +226,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -236,7 +236,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -246,7 +246,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/stories/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
