@@ -1,0 +1,17 @@
+// This file contains the styles for the hover border directive.
+// It is imported in the index.scss file.
+
+$space: 4px;
+$border-width: 2px;
+
+.hover-border-directive {
+    &::after {
+        position: absolute;
+        content: '';
+        width: calc(100% + $space * 2);
+        height: calc(100% + $space * 2);
+        top: -$space;
+        left: -$space;
+        border: $border-width solid transparent;
+    }
+}

@@ -1,8 +1,8 @@
-import { HoverInvert } from './hover-invert';
+import { HoverBorder } from './hover-invert';
 
-describe('HoverInvert', () => {
+describe('HoverBorder', () => {
   it('should create an instance', () => {
-    const directive = new HoverInvert();
+    const directive = new HoverBorder();
     expect(directive).toBeTruthy();
   });
 });
