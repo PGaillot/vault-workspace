@@ -4,7 +4,7 @@ import { Fieldset } from './fieldset';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<Fieldset> = {
-  title: 'Example/Fieldset',
+  title: 'Components/Fieldset',
   component: Fieldset,
   tags: ['autodocs'],
   argTypes: {},

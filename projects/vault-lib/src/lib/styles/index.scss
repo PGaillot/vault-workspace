@@ -1,4 +1,4 @@
-@import 'variables';
-@import 'colors';
-@import 'mixins';
-@import 'hover-border-directive';
+@forward 'variables';
+@forward 'colors';
+@forward 'mixins';
+@forward 'hover-border-directive';

@@ -6,10 +6,104 @@
     "interceptors": [],
     "classes": [],
     "directives": [],
-    "components": [],
+    "components": [
+        {
+            "name": "HoverBorderDirectiveDemo",
+            "id": "component-HoverBorderDirectiveDemo-407ce3eac636181cbb2f1a1762d7b3c1cb368ae8f9c20fe104aa243e9e661372b71dd79d0c859d7f4f8df06f60847539b4f080b02e8a4ced4864f9ca4da31ae0",
+            "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hover-border-demo",
+            "styleUrls": [
+                "../styles/index.scss"
+            ],
+            "styles": [],
+            "template": "<div vaultHoverBorder\n  [style.display]=\"'inline-block'\"\n  [style.padding]=\"padding\"\n  [style.background]=\"background\"\n  [style.color]=\"textColor\"\n  [style.position]=\"'relative'\">\n  {{ text }}\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "background",
+                    "defaultValue": "'#f0f0f0'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "padding",
+                    "defaultValue": "'1rem'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'Survolez-moi pour voir la bordure'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "textColor",
+                    "defaultValue": "'#000000'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HoverBorder"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder],\n  styleUrls: ['../styles/index.scss'],\n  template: `\n    <div vaultHoverBorder\n      [style.display]=\"'inline-block'\"\n      [style.padding]=\"padding\"\n      [style.background]=\"background\"\n      [style.color]=\"textColor\"\n      [style.position]=\"'relative'\">\n      {{ text }}\n    </div>\n  `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n  @Input() padding = '1rem';\n  @Input() background = '#f0f0f0';\n  @Input() textColor = '#000000';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n    padding: { control: 'text' },\n    background: { control: 'color' },\n    textColor: { control: 'color' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n    padding: '1rem',\n    background: '#f0f0f0',\n    textColor: '#000000',\n  },\n};\n\nexport const WithCustomColors: Story = {\n  args: {\n    ...Default.args,\n    text: 'Bordure colorée',\n    background: '#2dc92d',\n    textColor: '#ffffff',\n  },\n};\n\nexport const LargePadding: Story = {\n  args: {\n    ...Default.args,\n    text: 'Grande zone de padding',\n    padding: '2rem',\n    background: '#4a90e2',\n    textColor: '#ffffff',\n  },\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@forward 'variables';\n@forward 'colors';\n@forward 'mixins';\n@forward 'hover-border-directive';",
+                    "styleUrl": "../styles/index.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        }
+    ],
     "modules": [],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n    padding: '1rem',\n    background: '#f0f0f0',\n    textColor: '#000000',\n  },\n}"
+            },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
@@ -31,6 +125,26 @@
                 "defaultValue": "{\n  args: {},\n}"
             },
             {
+                "name": "LargePadding",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Default.args,\n    text: 'Grande zone de padding',\n    padding: '2rem',\n    background: '#4a90e2',\n    textColor: '#ffffff',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HoverBorderDirectiveDemo>",
+                "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n    padding: { control: 'text' },\n    background: { control: 'color' },\n    textColor: { control: 'color' },\n  },\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -38,7 +152,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
             },
             {
                 "name": "meta",
@@ -48,7 +162,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
-                "defaultValue": "{\n  title: 'Example/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
             },
             {
                 "name": "preview",
@@ -59,10 +173,31 @@
                 "deprecationMessage": "",
                 "type": "Preview",
                 "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+            },
+            {
+                "name": "WithCustomColors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Default.args,\n    text: 'Bordure colorée',\n    background: '#2dc92d',\n    textColor: '#ffffff',\n  },\n}"
             }
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HoverBorderDirectiveDemo>",
+                "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -88,6 +223,48 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/vault-lib/src/lib/directives/hover-border.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n    padding: '1rem',\n    background: '#f0f0f0',\n    textColor: '#000000',\n  },\n}"
+                },
+                {
+                    "name": "LargePadding",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    text: 'Grande zone de padding',\n    padding: '2rem',\n    background: '#4a90e2',\n    textColor: '#ffffff',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HoverBorderDirectiveDemo>",
+                    "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n    padding: { control: 'text' },\n    background: { control: 'color' },\n    textColor: { control: 'color' },\n  },\n}"
+                },
+                {
+                    "name": "WithCustomColors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    text: 'Bordure colorée',\n    background: '#2dc92d',\n    textColor: '#ffffff',\n  },\n}"
+                }
+            ],
             "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
                 {
                     "name": "Default",
@@ -107,7 +284,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
                 }
             ],
             "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
@@ -129,7 +306,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Fieldset>",
-                    "defaultValue": "{\n  title: 'Example/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                    "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
                 }
             ],
             "projects/vault-lib/.storybook/preview.ts": [
@@ -148,6 +325,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/vault-lib/src/lib/directives/hover-border.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HoverBorderDirectiveDemo>",
+                    "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -247,6 +437,65 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HoverBorderDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LargePadding",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithCustomColors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

@@ -1,4 +1,4 @@
-import { HoverBorder } from './hover-invert';
+import { HoverBorder } from './hover-border';
 
 describe('HoverBorder', () => {
   it('should create an instance', () => {

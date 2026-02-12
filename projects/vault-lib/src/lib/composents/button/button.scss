@@ -1,2 +1,2 @@
 // Import des styles partagés
-@import '../../../lib/styles/index';
+@use '../../../lib/styles/index' as *;
