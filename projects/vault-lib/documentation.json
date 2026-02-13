@@ -85,7 +85,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'button',\n    type: 'primary',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -96,6 +96,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
             },
             {
                 "name": "meta",
@@ -114,8 +124,8 @@
                 "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                "type": "Meta<BtnPropsAndCustomArgs>",
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  render: ({ label, type }) => ({\n    props: { type },\n    template: `<vault-button [type]=\"type\">${label}</vault-button>`,\n  }),\n  tags: ['autodocs'],\n  argTypes: {\n    type: {\n      control: 'select',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -125,7 +135,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
-                "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  args: { onClick: fn() },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Spinner>",
+                "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n}"
             },
             {
                 "name": "preview",
@@ -135,11 +155,32 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#0c0b0b' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'secondary',\n    type: 'secondary',\n  },\n}"
             }
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "BtnPropsAndCustomArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "unknown",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 194
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -155,7 +196,7 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
+                "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
                 "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -168,6 +209,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Fieldset>",
                 "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Spinner>",
+                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -207,7 +259,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'button',\n    type: 'primary',\n  },\n}"
                 },
                 {
                     "name": "meta",
@@ -216,8 +268,18 @@
                     "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                    "type": "Meta<BtnPropsAndCustomArgs>",
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  render: ({ label, type }) => ({\n    props: { type },\n    template: `<vault-button [type]=\"type\">${label}</vault-button>`,\n  }),\n  tags: ['autodocs'],\n  argTypes: {\n    type: {\n      control: 'select',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'secondary',\n    type: 'secondary',\n  },\n}"
                 }
             ],
             "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
@@ -239,7 +301,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Fieldset>",
-                    "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                    "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  args: { onClick: fn() },\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Spinner>",
+                    "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n}"
                 }
             ],
             "projects/vault-lib/.storybook/preview.ts": [
@@ -251,13 +335,37 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#333' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#0c0b0b' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
+                {
+                    "name": "BtnPropsAndCustomArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "unknown",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 194
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/vault-lib/src/lib/directives/hover-border.stories.ts": [
                 {
                     "name": "Story",
@@ -271,19 +379,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Story",
@@ -291,6 +386,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Fieldset>",
                     "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Spinner>",
+                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -340,6 +448,26 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "BtnPropsAndCustomArgs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -370,6 +498,36 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

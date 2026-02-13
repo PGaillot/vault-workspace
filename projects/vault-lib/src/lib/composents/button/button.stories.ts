@@ -1,29 +1,45 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from 'storybook/test';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
+import { Button } from './button';
 
-import { ButtonComponent } from './button.component';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<Button> = {
   title: 'Components/Button',
-  component: ButtonComponent,
+  component: Button,
+  decorators: [
+    moduleMetadata({
+      imports: [Button],
+    }),
+  ],
   tags: ['autodocs'],
+  args: {
+    type: 'primary',
+  },
   argTypes: {
-    backgroundColor: {
-      control: 'color',
+    type: {
+      control: 'radio',
+      options: ['primary', 'secondary'],
     },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn() },
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<Button>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    type: 'primary',
   },
+  render: (args) => ({
+    props: args,
+    template: `<vault-button [type]="type">Primary Button</vault-button>`,
+  }),
+};
+
+export const Secondary: Story = {
+  args: {
+    type: 'secondary',
+  },
+  render: (args) => ({
+    props: args,
+    template: `<vault-button [type]="type">Secondary Button</vault-button>`,
+  }),
 };

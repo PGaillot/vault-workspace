@@ -1,2 +1,21 @@
 // Import des styles partagés
 @use '../../../lib/styles/index' as *;
+
+.vault-button {
+    border: none;
+    background: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid $primary;
+    box-sizing: border-box;
+}
+
+:host(.vault-button--primary) .vault-button {
+    background: $primary;
+    color: $background;
+}
+
+:host(.vault-button--secondary) .vault-button {
+    background: black;
+    color: $primary;
+}
