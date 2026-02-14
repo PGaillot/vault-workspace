@@ -17,6 +17,8 @@ const meta: Meta<Spinner> = {
   },
   args: {
     duration: 5000,
+    timingFunction: 'linear',
+    type: 'gear',
   },
 };
 
@@ -28,4 +30,12 @@ export const Default: Story = {
   args: {
     type: 'gear',
   },
+};
+
+export const Loader: Story = {
+  args: {
+    duration: 2000,
+    timingFunction: "ease-in-out",
+    type: "gear"
+  }
 };
