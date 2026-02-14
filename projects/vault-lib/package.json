@@ -1,6 +1,9 @@
 {
   "name": "vault-lib",
   "version": "0.0.1",
+  "assets": [
+    "./assets/*"
+  ],
   "peerDependencies": {
     "@angular/common": "^20.3.0",
     "@angular/core": "^20.3.0"

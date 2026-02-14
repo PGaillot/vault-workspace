@@ -1,20 +1,14 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { Component, Input } from '@angular/core';
 import { HoverBorder } from './hover-border';
+import { Button } from '../composents/button/button';
 
 @Component({
   selector: 'hover-border-demo',
   standalone: true,
-  imports: [HoverBorder],
+  imports: [HoverBorder, Button],
   styleUrls: ['../styles/index.scss'],
-  template: `
-    <div
-      style="display:inline-block; position:relative; padding: 8px 14px; background:white;"
-      vaultHoverBorder
-    >
-      {{ text }}
-    </div>
-  `,
+  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,
 })
 class HoverBorderDirectiveDemo {
   @Input() text = 'Survolez-moi pour voir la bordure';

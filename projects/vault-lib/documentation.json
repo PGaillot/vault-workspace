@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "HoverBorderDirectiveDemo",
-            "id": "component-HoverBorderDirectiveDemo-9bb7df2e5c14a42db88a58c811fa552a9a4e5bcbf23297899975f0f431b7ef5bcc4d3dcf5fbc09b987c043030c8219b65ed560da38235d0ef4fcee5cdcdb1ff8",
+            "id": "component-HoverBorderDirectiveDemo-927f81520c9722f953ab383931dc7492289df48d5f91e3b21613b16cbc80003309b73c883b41c6b29f88c0199ab78d2e1a86cde8ff693f95e950d5e659169739",
             "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -21,7 +21,7 @@
                 "../styles/index.scss"
             ],
             "styles": [],
-            "template": "<div\n  style=\"display:inline-block; position:relative; padding: 8px 14px; background:white;\"\n  vaultHoverBorder\n>\n  {{ text }}\n</div>\n",
+            "template": "<vault-button vaultHoverBorder> {{ text }}</vault-button>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -31,7 +31,7 @@
                     "defaultValue": "'Survolez-moi pour voir la bordure'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 }
@@ -47,12 +47,15 @@
             "imports": [
                 {
                     "name": "HoverBorder"
+                },
+                {
+                    "name": "Button"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder],\n  styleUrls: ['../styles/index.scss'],\n  template: `\n    <div\n      style=\"display:inline-block; position:relative; padding: 8px 14px; background:white;\"\n      vaultHoverBorder\n    >\n      {{ text }}\n    </div>\n  `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n};\n",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\nimport { Button } from '../composents/button/button';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder, Button],\n  styleUrls: ['../styles/index.scss'],\n  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -76,16 +79,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'button',\n    type: 'primary',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -124,8 +117,8 @@
                 "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<BtnPropsAndCustomArgs>",
-                "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  render: ({ label, type }) => ({\n    props: { type },\n    template: `<vault-button [type]=\"type\">${label}</vault-button>`,\n  }),\n  tags: ['autodocs'],\n  argTypes: {\n    type: {\n      control: 'select',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
+                "type": "Meta<Button>",
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [Button],\n    }),\n  ],\n  tags: ['autodocs'],\n  args: {\n    type: 'primary',\n  },\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -158,6 +151,16 @@
                 "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#0c0b0b' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    type: 'primary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\n  }),\n}"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -165,22 +168,11 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'secondary',\n    type: 'secondary',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    type: 'secondary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\n  }),\n}"
             }
         ],
         "functions": [],
         "typealiases": [
-            {
-                "name": "BtnPropsAndCustomArgs",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "unknown",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 194
-            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -196,7 +188,7 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
+                "rawtype": "StoryObj<Button>",
                 "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -250,38 +242,6 @@
                     "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n}"
                 }
             ],
-            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'button',\n    type: 'primary',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<BtnPropsAndCustomArgs>",
-                    "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  render: ({ label, type }) => ({\n    props: { type },\n    template: `<vault-button [type]=\"type\">${label}</vault-button>`,\n  }),\n  tags: ['autodocs'],\n  argTypes: {\n    type: {\n      control: 'select',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'secondary',\n    type: 'secondary',\n  },\n}"
-                }
-            ],
             "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Default",
@@ -326,6 +286,38 @@
                     "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n}"
                 }
             ],
+            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Button>",
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [Button],\n    }),\n  ],\n  tags: ['autodocs'],\n  args: {\n    type: 'primary',\n  },\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'primary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\n  }),\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    type: 'secondary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\n  }),\n}"
+                }
+            ],
             "projects/vault-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -342,30 +334,6 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
-                {
-                    "name": "BtnPropsAndCustomArgs",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "unknown",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 194
-                },
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/directives/hover-border.stories.ts": [
                 {
                     "name": "Story",
@@ -373,6 +341,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HoverBorderDirectiveDemo>",
                     "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -431,16 +412,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -451,17 +422,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
                 "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
-                "type": "type alias",
+                "type": "variable",
                 "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "BtnPropsAndCustomArgs",
+                "linksubtype": "variable",
+                "name": "Secondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

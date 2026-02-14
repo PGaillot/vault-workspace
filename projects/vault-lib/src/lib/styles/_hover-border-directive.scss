@@ -3,7 +3,14 @@
 $space: 4px;
 $border-width: 2px;
 
+:host {
+    position: relative;
+    display: block;
+    width: fit-content;
+}
+
 .hover-border-directive {
+
     &::after {
         position: absolute;
         content: '';
