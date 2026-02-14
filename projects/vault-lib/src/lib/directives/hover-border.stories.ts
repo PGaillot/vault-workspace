@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { Component, Input } from '@angular/core';
 import { HoverBorder } from './hover-border';
-import { Button } from '../composents/button/button';
+import { Button } from '../components/button/button';
 
 @Component({
   selector: 'hover-border-demo',

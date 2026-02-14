@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "HoverBorderDirectiveDemo",
-            "id": "component-HoverBorderDirectiveDemo-927f81520c9722f953ab383931dc7492289df48d5f91e3b21613b16cbc80003309b73c883b41c6b29f88c0199ab78d2e1a86cde8ff693f95e950d5e659169739",
+            "id": "component-HoverBorderDirectiveDemo-d69a0660d9dd40bbacfdf6498970aa1c36309a08a4a6ed84b4356d091e031bb13fd07a552d7e5a9d334b8282392b3b2beafb08c9c698d38921d670defa3bed41",
             "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -55,7 +55,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\nimport { Button } from '../composents/button/button';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder, Button],\n  styleUrls: ['../styles/index.scss'],\n  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n};\n",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\nimport { Button } from '../components/button/button';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder, Button],\n  styleUrls: ['../styles/index.scss'],\n  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -84,7 +84,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -94,11 +94,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
+            },
+            {
+                "name": "Loader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    duration: 2000,\n    timingFunction: \"ease-in-out\",\n    type: \"gear\"\n  }\n}"
             },
             {
                 "name": "meta",
@@ -114,7 +134,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
@@ -124,7 +144,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
@@ -134,11 +154,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ProgressBar>",
+                "defaultValue": "{\n  component: ProgressBar,\n  title: 'Components/Progress bar',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Spinner>",
-                "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n  argTypes: {\n    timingFunction: {\n      control: 'radio',\n      options: ['ease-in-out', 'linear'],\n    },\n    duration: {\n      control: 'number',\n      description: 'milliseconds',\n    },\n  },\n  args: {\n    duration: 5000,\n    timingFunction: 'linear',\n    type: 'gear',\n  },\n}"
             },
             {
                 "name": "preview",
@@ -154,7 +184,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -164,7 +194,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -189,7 +219,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
-                "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -200,7 +230,18 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ProgressBar>",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -211,7 +252,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Spinner>",
-                "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -242,12 +283,12 @@
                     "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n}"
                 }
             ],
-            "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
+            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -257,41 +298,73 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Fieldset>",
                     "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n  args: { onClick: fn() },\n}"
                 }
             ],
-            "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts": [
+            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ProgressBar>",
+                    "defaultValue": "{\n  component: ProgressBar,\n  title: 'Components/Progress bar',\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
                 },
                 {
-                    "name": "meta",
+                    "name": "Loader",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<Spinner>",
-                    "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n}"
-                }
-            ],
-            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    duration: 2000,\n    timingFunction: \"ease-in-out\",\n    type: \"gear\"\n  }\n}"
+                },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Spinner>",
+                    "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n  argTypes: {\n    timingFunction: {\n      control: 'radio',\n      options: ['ease-in-out', 'linear'],\n    },\n    duration: {\n      control: 'number',\n      description: 'milliseconds',\n    },\n  },\n  args: {\n    duration: 5000,\n    timingFunction: 'linear',\n    type: 'gear',\n  },\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/components/button/button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
@@ -301,7 +374,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -311,7 +384,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -347,39 +420,52 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/composents/button/button.stories.ts": [
+            "projects/vault-lib/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Button>",
-                    "file": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts": [
+            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Fieldset>",
-                    "file": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts": [
+            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ProgressBar>",
+                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Spinner>",
-                    "file": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                    "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -408,7 +494,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -418,7 +504,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -428,7 +514,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -438,7 +524,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/button/button.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -448,7 +534,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -458,7 +544,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -468,7 +554,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/fieldset/fieldset.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -478,7 +564,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -488,7 +574,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -498,7 +584,47 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/vault-lib/src/lib/composents/spinner/spinner.stories.ts",
+                "filePath": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
