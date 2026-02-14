@@ -26,10 +26,13 @@ export class ProgressBar {
   private readonly blocksCount: number = 40;
 
   readonly blocks = computed(() => {
-    const filledBlocksCount: number = this.progress() > this.max() 
-      ? this.blocksCount 
-      : Math.floor((this.progressValue() / 100) * this.blocksCount);
-    return Array.from({ length: this.blocksCount }, (_, i) => ({ filled: i < filledBlocksCount }));
+    const filledBlocksCount: number =
+      this.progress() > this.max()
+        ? this.blocksCount
+        : Math.floor((this.progressValue() / 100) * this.blocksCount);
+    return Array.from({ length: this.blocksCount }, (_, i: number) => ({
+      filled: i < filledBlocksCount,
+    }));
   });
 
   readonly progressValue: Signal<number> = computed(() => {
