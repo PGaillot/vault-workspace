@@ -6,11 +6,26 @@
     width: 240px;
     box-sizing: border-box;
     border: 2px solid $primary;
-    padding: 2px;
+    padding: 4px;
+    display: flex;
+    gap: 2px;
 
-    .progress {
+    .progress,
+    .block {
         display: block;
         height: 100%;
+    }
+
+    .progress {
         background-color: $primary;
+    }
+
+    .block {
+        flex: 1;
+        background: transparent;
+
+        &.filled {
+            background-color: $primary;
+        }
     }
 }

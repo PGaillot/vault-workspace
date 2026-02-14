@@ -34,15 +34,13 @@ type Story = StoryObj<ProgressBar>;
 export const Default: Story = {
   args: {
     progress: 30,
-    type: "fill"
+    type: 'fill',
   },
 };
 
 export const Block: Story = {
   args: {
-    type: "block",
-    min: 1,
-    max: 100,
-    progress: 40
-  }
+    type: 'block',
+    progress: 40,
+  },
 };
