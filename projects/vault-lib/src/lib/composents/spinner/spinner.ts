@@ -8,12 +8,16 @@ export type SpinnerType = 'gear';
   imports: [CommonModule],
   template: `<img
     class="spinner"
-    [ngStyle]="{ 'animation-duration': speed() + 'ms' }"
+    [ngStyle]="{
+      'animation-duration': duration() + 'ms',
+      'animation-timing-function': timingFunction(),
+    }"
     [src]="type() + '.svg'"
   />`,
   styleUrl: './spinner.scss',
 })
 export class Spinner {
   type: InputSignal<SpinnerType> = input<SpinnerType>('gear');
-  speed: InputSignal<number> = input<number>(5000);
+  timingFunction: InputSignal<'linear' | 'ease-in-out'> = input<'linear' | 'ease-in-out'>('linear');
+  duration: InputSignal<number> = input<number>(5000);
 }

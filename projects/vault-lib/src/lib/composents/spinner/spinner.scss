@@ -1,10 +1,8 @@
 @use '../../styles/index.scss' as *;
 
 .spinner {
-    animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-name: spin;
-    // animation-duration: 1s;
 }
 
 @keyframes spin {
