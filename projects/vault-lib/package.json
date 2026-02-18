@@ -1,6 +1,23 @@
 {
   "name": "vault-lib",
-  "version": "0.0.2",
+  "version": "0.0.1",
+  "description": "Angular UI component library",
+  "author": "PGaillot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PGaillot/vault-workspace.git"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "ui",
+    "library"
+  ],
+  "homepage": "https://github.com/PGaillot/vault-workspace#readme",
+  "bugs": {
+    "url": "https://github.com/PGaillot/vault-workspace/issues"
+  },
   "assets": [
     "./assets/*"
   ],

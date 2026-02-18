@@ -52,24 +52,28 @@ const { readFileSync, writeFileSync } = fs;
             }
 
             console.log('publishing lib...');
+
+            const distPath = path.resolve(process.cwd(), 'dist', 'vault-lib');
+
+            // Vérifier si le répertoire existe
+            if (!fs.existsSync(distPath)) {
+                throw new Error(`Le répertoire dist n'existe pas: ${distPath}`);
+            }
+
+            const packageJsonPath = path.join(distPath, 'package.json');
+            if (!fs.existsSync(packageJsonPath)) {
+                throw new Error(`package.json introuvable dans: ${distPath}`);
+            }
+
+            console.log(`📦 Publication depuis: ${distPath}`);
+
+            // Lire la version du package
+            const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+            console.log(`📌 Version à publier: ${packageJson.name}@${packageJson.version}`);
+
             try {
-
-                const distPath = path.resolve(process.cwd(), 'dist', 'vault-lib');
-
-                // Vérifier si le répertoire existe
-                if (!fs.existsSync(distPath)) {
-                    throw new Error(`Le répertoire dist n'existe pas: ${distPath}`);
-                }
-
-                const packageJsonPath = path.join(distPath, 'package.json');
-                if (!fs.existsSync(packageJsonPath)) {
-                    throw new Error(`package.json introuvable dans: ${distPath}`);
-                }
-
-                console.log(`📦 Publication depuis: ${distPath}`);
-
                 // npm publish avec provenance et accès public
-                await execSync("npm publish --provenance --access public",
+                execSync("npm publish --provenance --access public",
                     {
                         cwd: distPath,
                         stdio: "inherit",
@@ -78,6 +82,14 @@ const { readFileSync, writeFileSync } = fs;
                 console.log('🎊 publishing lib done 🎊');
             } catch (error) {
                 console.error('❌ publish lib error :', error);
+                console.error('Code de sortie:', error.status);
+
+                // Si la version existe déjà, c'est pas une vraie erreur
+                if (error.stderr && error.stderr.toString().includes('cannot publish over existing version')) {
+                    console.log('⚠️  Package déjà publié avec cette version');
+                } else {
+                    throw error; // Arrêter le workflow si erreur réelle
+                }
             }
 
         } catch (error) {
