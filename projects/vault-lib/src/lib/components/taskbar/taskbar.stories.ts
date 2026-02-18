@@ -30,6 +30,12 @@ export const WirhItems: Story = {
       {
         name: 'Fichier',
       },
+      {
+        name: 'VsCode',
+      },
+      {
+        name: 'Discord',
+      },
     ],
   },
 };

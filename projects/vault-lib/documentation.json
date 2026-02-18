@@ -59,7 +59,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@forward 'variables';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'hover-border-directive';",
+                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'hover-border-directive';",
                     "styleUrl": "../styles/index.scss"
                 }
             ],
@@ -118,7 +118,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@forward 'variables';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'hover-border-directive';",
+                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'hover-border-directive';",
                     "styleUrl": "../styles/index.scss"
                 }
             ],
@@ -197,7 +197,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {},\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        name: 'Documents',\r\n      },\r\n    ],\r\n  },\r\n}"
             },
             {
                 "name": "Legend",
@@ -243,21 +243,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Button>",
-                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Button],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n    },\r\n  },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
                 "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Button>",
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Button],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -318,6 +318,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    type: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\r\n  }),\r\n}"
+            },
+            {
+                "name": "WirhItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        name: 'Documents',\r\n      },\r\n      {\r\n        name: 'Fichier',\r\n      },\r\n      {\r\n        name: 'VsCode',\r\n      },\r\n      {\r\n        name: 'Discord',\r\n      },\r\n    ],\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -348,8 +358,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Button>",
-                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
+                "rawtype": "StoryObj<Fieldset>",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -359,8 +369,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -551,7 +561,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {},\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        name: 'Documents',\r\n      },\r\n    ],\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -562,6 +572,16 @@
                     "deprecationMessage": "",
                     "type": "Meta",
                     "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "WirhItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    items: [\r\n      {\r\n        name: 'Documents',\r\n      },\r\n      {\r\n        name: 'Fichier',\r\n      },\r\n      {\r\n        name: 'VsCode',\r\n      },\r\n      {\r\n        name: 'Discord',\r\n      },\r\n    ],\r\n  },\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
@@ -638,19 +658,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/button/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Button>",
-                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Story",
@@ -658,6 +665,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Fieldset>",
                     "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -900,6 +920,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WirhItems",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
