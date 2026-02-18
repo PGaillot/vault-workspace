@@ -44,8 +44,12 @@ const { readFileSync, writeFileSync } = fs;
             console.log('getting pull requests...');
             const pullRequests = await getPullRequests();
 
-            console.log('writing changes...');
-            await writeChanges(pullRequests[0]);
+            if (pullRequests && pullRequests.length > 0) {
+                console.log('writing changes...');
+                await writeChanges(pullRequests[0]);
+            } else {
+                console.log('⚠️  No pull requests found, skipping changelog update');
+            }
 
             console.log('publishing lib...');
             try {
@@ -64,7 +68,8 @@ const { readFileSync, writeFileSync } = fs;
 
                 console.log(`📦 Publication depuis: ${distPath}`);
 
-                await execSync("npm publish",
+                // npm publish avec provenance et accès public
+                await execSync("npm publish --provenance --access public",
                     {
                         cwd: distPath,
                         stdio: "inherit",
@@ -123,6 +128,11 @@ const { readFileSync, writeFileSync } = fs;
      * @return {void}
      */
     async function writeChanges(pullRequest) {
+        if (!pullRequest) {
+            console.log('⚠️  No pull request provided, skipping changelog update');
+            return;
+        }
+
         let version
         const changesLogPath = path.join(process.cwd(), 'projects', 'vault-lib', 'CHANGELOG.md');
         const packageJsPath = path.join(process.cwd(), 'projects', 'vault-lib', 'package.json');
@@ -133,23 +143,30 @@ const { readFileSync, writeFileSync } = fs;
             version = packageJs.version;
         } catch (error) {
             console.error('❌ get package version error :', error);
+            return;
         }
 
-
         try {
+            // Créer le fichier CHANGELOG s'il n'existe pas
+            if (!fs.existsSync(changesLogPath)) {
+                console.log('📝 Creating CHANGELOG.md...');
+                fs.writeFileSync(changesLogPath, '# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n---\n', 'utf-8');
+            }
+
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
             const newChangeLog = getChangesLog(version, pullRequest);
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
+            console.log('✅ Changelog updated');
 
         } catch (error) {
             console.error('❌ write changes error :', error);
         }
 
         try {
-            const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
-            execSync("node scripts/update-readme.cjs", { stdio: "inherit" });
-
+            if (fs.existsSync('scripts/update-readme.cjs')) {
+                execSync("node scripts/update-readme.cjs", { stdio: "inherit" });
+            }
         } catch (error) {
             console.log('❌ write changes in README error :', error);
         }
