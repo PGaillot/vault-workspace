@@ -11,6 +11,9 @@
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/vault-lib/ng-package.json"
+          },
           "configurations": {
             "production": {
               "tsConfig": "projects/vault-lib/tsconfig.lib.prod.json"

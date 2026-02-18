@@ -19,15 +19,24 @@ const { readFileSync, writeFileSync } = fs;
             await updateVersion();
 
             console.log('build lib...');
+            console.log(`📂 Répertoire de travail: ${process.cwd()}`);
             try {
-                await execSync("cd " + process.cwd() + " && npm run build",
+                await execSync("npm run build",
                     {
+                        cwd: process.cwd(),
                         stdio: "inherit",
                     });
 
+                // Vérifier que le build a bien créé le dossier dist
+                const distPath = path.resolve(process.cwd(), 'dist', 'vault-lib');
+                if (!fs.existsSync(distPath)) {
+                    throw new Error(`❌ Le build n'a pas créé le dossier dist: ${distPath}`);
+                }
+                console.log(`✅ Build réussi dans: ${distPath}`);
 
             } catch (error) {
                 console.error('❌ build lib error :', error);
+                throw error; // Arrêter le processus si le build échoue
             }
 
 
@@ -41,10 +50,23 @@ const { readFileSync, writeFileSync } = fs;
             console.log('publishing lib...');
             try {
 
-                const distPath = path.join(process.cwd(), 'dist', 'vault-lib');
+                const distPath = path.resolve(process.cwd(), 'dist', 'vault-lib');
 
-                await execSync("cd " + distPath + " && npm publish",
+                // Vérifier si le répertoire existe
+                if (!fs.existsSync(distPath)) {
+                    throw new Error(`Le répertoire dist n'existe pas: ${distPath}`);
+                }
+
+                const packageJsonPath = path.join(distPath, 'package.json');
+                if (!fs.existsSync(packageJsonPath)) {
+                    throw new Error(`package.json introuvable dans: ${distPath}`);
+                }
+
+                console.log(`📦 Publication depuis: ${distPath}`);
+
+                await execSync("npm publish",
                     {
+                        cwd: distPath,
                         stdio: "inherit",
                     });
 
@@ -68,8 +90,9 @@ const { readFileSync, writeFileSync } = fs;
      */
     async function updateVersion() {
         try {
-            execSync("cd " + libPath + " && npm version patch",
+            execSync("npm version patch",
                 {
+                    cwd: libPath,
                     stdio: "inherit",
                 });
         } catch (error) {
