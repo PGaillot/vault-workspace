@@ -1,0 +1,14 @@
+<div class="taskbar">
+    <vault-button type="secondary">menu</vault-button>
+    <div class="content">
+        @for(item of items();track $index){
+        <div class="item">
+            <p>{{item.name}}</p>
+        </div>
+        }
+    </div>
+    <div class="time">
+        <div class="hours">{{time()}}</div>
+        <div class="hours">{{date()}}</div>
+    </div>
+</div>

@@ -190,6 +190,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    type: 'gear',\r\n  },\r\n}"
             },
             {
+                "name": "Defaut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
                 "name": "Legend",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -268,6 +278,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<Spinner>",
                 "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "preview",
@@ -363,6 +383,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Spinner>",
                 "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Taskbar>",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -511,6 +542,28 @@
                     "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
                 }
             ],
+            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
+                {
+                    "name": "Defaut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta",
+                    "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
+                }
+            ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "meta",
@@ -631,6 +684,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Spinner>",
                     "file": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Taskbar>",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -810,6 +876,36 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Defaut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

@@ -1,0 +1,40 @@
+@use '../../styles/index.scss' as *;
+
+.taskbar {
+    display: flex;
+    gap: 1rem;
+    padding: 4px;
+    width: 100vw;
+    align-items: center;
+    background-color: $primary;
+    justify-content: space-between;
+
+    .content {
+        display: flex;
+        gap: 1rem;
+        flex: 1;
+        height: 36px;
+
+
+        .item {
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            min-width: 20px;
+            padding-inline: 12px;
+            box-sizing: border-box;
+
+            &:hover {
+                border: 2px solid $background;
+            }
+        }
+    }
+
+    .time {
+        font-size: 10pt;
+        gap: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
