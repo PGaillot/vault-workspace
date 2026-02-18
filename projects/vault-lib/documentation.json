@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "HoverBorderDirectiveDemo",
-            "id": "component-HoverBorderDirectiveDemo-d69a0660d9dd40bbacfdf6498970aa1c36309a08a4a6ed84b4356d091e031bb13fd07a552d7e5a9d334b8282392b3b2beafb08c9c698d38921d670defa3bed41",
+            "id": "component-HoverBorderDirectiveDemo-3e5b44741973f31327ac930bf088400ca9bc98b0a6a7dbb30e1ad090880eaa181d8c96617bf0ac4ac57a6af897882e7be68e312a486628cd9da09547aced3a8a",
             "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -55,11 +55,70 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { HoverBorder } from './hover-border';\nimport { Button } from '../components/button/button';\n\n@Component({\n  selector: 'hover-border-demo',\n  standalone: true,\n  imports: [HoverBorder, Button],\n  styleUrls: ['../styles/index.scss'],\n  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,\n})\nclass HoverBorderDirectiveDemo {\n  @Input() text = 'Survolez-moi pour voir la bordure';\n}\n\n// --- Stories ---\n\nconst meta: Meta<HoverBorderDirectiveDemo> = {\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n};\n",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { HoverBorder } from './hover-border';\r\nimport { Button } from '../components/button/button';\r\n\r\n@Component({\r\n  selector: 'hover-border-demo',\r\n  standalone: true,\r\n  imports: [HoverBorder, Button],\r\n  styleUrls: ['../styles/index.scss'],\r\n  template: `<vault-button vaultHoverBorder> {{ text }}</vault-button> `,\r\n})\r\nclass HoverBorderDirectiveDemo {\r\n  @Input() text = 'Survolez-moi pour voir la bordure';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<HoverBorderDirectiveDemo> = {\r\n  title: 'Directives/HoverBorder',\r\n  component: HoverBorderDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<HoverBorderDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n};\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@forward 'variables';\n@forward 'colors';\n@forward 'mixins';\n@forward 'hover-border-directive';",
+                    "data": "@forward 'variables';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'hover-border-directive';",
+                    "styleUrl": "../styles/index.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HoverInvertDirectiveDemo",
+            "id": "component-HoverInvertDirectiveDemo-ab6328576e9555f359f1c22afddf7cf3d700f6dc9abbbc14fb1769a7e18182289d84aebd18e09504ae9104615bb1661bcad6be7ab5a1ca0112e9156531f292a0",
+            "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hover-hover-demo",
+            "styleUrls": [
+                "../styles/index.scss"
+            ],
+            "styles": [],
+            "template": "<vault-button vaultHoverInvert> {{ text }}</vault-button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "'Survolez-moi pour voir la bordure'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HoverInvert"
+                },
+                {
+                    "name": "Button"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { HoverBorder } from './hover-border';\r\nimport { Button } from '../components/button/button';\r\nimport { HoverInvert } from './hover-invert';\r\n\r\n@Component({\r\n  selector: 'hover-hover-demo',\r\n  standalone: true,\r\n  imports: [HoverInvert, Button],\r\n  styleUrls: ['../styles/index.scss'],\r\n  template: `<vault-button vaultHoverInvert> {{ text }}</vault-button> `,\r\n})\r\nclass HoverInvertDirectiveDemo {\r\n  @Input() text = 'Survolez-moi pour voir la bordure';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<HoverInvertDirectiveDemo> = {\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<HoverInvertDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n};\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@forward 'variables';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'hover-border-directive';",
                     "styleUrl": "../styles/index.scss"
                 }
             ],
@@ -78,7 +137,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'block',\n    progress: 40,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    type: 'block',\r\n    progress: 40,\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -88,17 +147,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -108,7 +167,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    progress: 30,\n    type: 'fill',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
             },
             {
                 "name": "Default",
@@ -118,7 +187,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    type: 'gear',\r\n  },\r\n}"
             },
             {
                 "name": "Legend",
@@ -128,7 +197,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    legend: 'legend',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    legend: 'legend',\r\n  },\r\n}"
             },
             {
                 "name": "Loader",
@@ -138,7 +207,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    duration: 2000,\n    timingFunction: \"ease-in-out\",\n    type: \"gear\"\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    duration: 2000,\r\n    timingFunction: \"ease-in-out\",\r\n    type: \"gear\"\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -148,7 +217,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverBorderDirectiveDemo>",
-                "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n}"
+                "defaultValue": "{\r\n  title: 'Directives/HoverBorder',\r\n  component: HoverBorderDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HoverInvertDirectiveDemo>",
+                "defaultValue": "{\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -158,17 +237,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
-                "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [Button],\n    }),\n  ],\n  tags: ['autodocs'],\n  args: {\n    type: 'primary',\n  },\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Fieldset>",
-                "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n}"
+                "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Button],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -178,7 +247,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ProgressBar>",
-                "defaultValue": "{\n  component: ProgressBar,\n  title: 'Components/Progress bar',\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['fill', 'block'],\n    },\n    min: {\n      control: 'number',\n    },\n    max: {\n      control: 'number',\n    },\n    progress: {\n      control: 'number',\n    },\n  },\n  args: {\n    type: 'fill',\n    min: 1,\n    max: 100,\n    progress: 30,\n  },\n}"
+                "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Fieldset>",
+                "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
             },
             {
                 "name": "meta",
@@ -188,7 +267,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Spinner>",
-                "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n  argTypes: {\n    timingFunction: {\n      control: 'radio',\n      options: ['ease-in-out', 'linear'],\n    },\n    duration: {\n      control: 'number',\n      description: 'milliseconds',\n    },\n  },\n  args: {\n    duration: 5000,\n    timingFunction: 'linear',\n    type: 'gear',\n  },\n}"
+                "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -198,7 +277,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#0c0b0b' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n    backgrounds: {\r\n      options: {\r\n        dark: { name: 'Dark', value: '#0c0b0b' },\r\n      },\r\n    },\r\n    docs: {\r\n      canvas: {\r\n        sourceState: 'shown',\r\n      },\r\n      story: {\r\n        inline: false,\r\n      },\r\n    },\r\n  },\r\n  initialGlobals: {\r\n    backgrounds: { value: 'dark' },\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -208,7 +287,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'primary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\r\n  }),\r\n}"
             },
             {
                 "name": "Secondary",
@@ -218,7 +297,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'secondary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    type: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\r\n  }),\r\n}"
             }
         ],
         "functions": [],
@@ -229,6 +308,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<HoverBorderDirectiveDemo>",
                 "file": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HoverInvertDirectiveDemo>",
+                "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -249,8 +339,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "rawtype": "StoryObj<ProgressBar>",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -260,8 +350,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProgressBar>",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "rawtype": "StoryObj<Fieldset>",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -290,7 +380,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'block',\n    progress: 40,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    type: 'block',\r\n    progress: 40,\r\n  },\r\n}"
                 },
                 {
                     "name": "Default",
@@ -300,7 +390,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    progress: 30,\n    type: 'fill',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -310,7 +400,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ProgressBar>",
-                    "defaultValue": "{\n  component: ProgressBar,\n  title: 'Components/Progress bar',\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['fill', 'block'],\n    },\n    min: {\n      control: 'number',\n    },\n    max: {\n      control: 'number',\n    },\n    progress: {\n      control: 'number',\n    },\n  },\n  args: {\n    type: 'fill',\n    min: 1,\n    max: 100,\n    progress: 30,\n  },\n}"
+                    "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/directives/hover-border.stories.ts": [
@@ -322,7 +412,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    text: 'Survolez-moi pour voir la bordure',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -332,7 +422,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverBorderDirectiveDemo>",
-                    "defaultValue": "{\n  title: 'Directives/HoverBorder',\n  component: HoverBorderDirectiveDemo,\n  argTypes: {\n    text: { control: 'text' },\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'Directives/HoverBorder',\r\n  component: HoverBorderDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/directives/hover-invert.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HoverInvertDirectiveDemo>",
+                    "defaultValue": "{\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
@@ -344,7 +456,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 },
                 {
                     "name": "Legend",
@@ -354,7 +466,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    legend: 'legend',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    legend: 'legend',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -364,7 +476,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Fieldset>",
-                    "defaultValue": "{\n  title: 'Components/Fieldset',\n  component: Fieldset,\n  tags: ['autodocs'],\n  argTypes: {},\n}"
+                    "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts": [
@@ -376,7 +488,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'gear',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    type: 'gear',\r\n  },\r\n}"
                 },
                 {
                     "name": "Loader",
@@ -386,7 +498,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    duration: 2000,\n    timingFunction: \"ease-in-out\",\n    type: \"gear\"\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    duration: 2000,\r\n    timingFunction: \"ease-in-out\",\r\n    type: \"gear\"\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -396,7 +508,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Spinner>",
-                    "defaultValue": "{\n  component: Spinner,\n  title: 'Components/Spinner',\n  tags: ['autodocs'],\n  argTypes: {\n    timingFunction: {\n      control: 'radio',\n      options: ['ease-in-out', 'linear'],\n    },\n    duration: {\n      control: 'number',\n      description: 'milliseconds',\n    },\n  },\n  args: {\n    duration: 5000,\n    timingFunction: 'linear',\n    type: 'gear',\n  },\n}"
+                    "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
@@ -408,7 +520,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
-                    "defaultValue": "{\n  title: 'Components/Button',\n  component: Button,\n  decorators: [\n    moduleMetadata({\n      imports: [Button],\n    }),\n  ],\n  tags: ['autodocs'],\n  args: {\n    type: 'primary',\n  },\n  argTypes: {\n    type: {\n      control: 'radio',\n      options: ['primary', 'secondary'],\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Button],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -418,7 +530,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'primary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<vault-button [type]=\"type\">Primary Button</vault-button>`,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Secondary",
@@ -428,7 +540,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'secondary',\n  },\n  render: (args) => ({\n    props: args,\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    type: 'secondary',\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `<vault-button [type]=\"type\">Secondary Button</vault-button>`,\r\n  }),\r\n}"
                 }
             ],
             "projects/vault-lib/.storybook/preview.ts": [
@@ -440,7 +552,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    backgrounds: {\n      options: {\n        dark: { name: 'Dark', value: '#0c0b0b' },\n      },\n    },\n    docs: {\n      canvas: {\n        sourceState: 'shown',\n      },\n      story: {\n        inline: false,\n      },\n    },\n  },\n  initialGlobals: {\n    backgrounds: { value: 'dark' },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n    backgrounds: {\r\n      options: {\r\n        dark: { name: 'Dark', value: '#0c0b0b' },\r\n      },\r\n    },\r\n    docs: {\r\n      canvas: {\r\n        sourceState: 'shown',\r\n      },\r\n      story: {\r\n        inline: false,\r\n      },\r\n    },\r\n  },\r\n  initialGlobals: {\r\n    backgrounds: { value: 'dark' },\r\n  },\r\n}"
                 }
             ]
         },
@@ -460,6 +572,19 @@
                     "kind": 184
                 }
             ],
+            "projects/vault-lib/src/lib/directives/hover-invert.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HoverInvertDirectiveDemo>",
+                    "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -473,19 +598,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Fieldset>",
-                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
                 {
                     "name": "Story",
@@ -493,6 +605,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ProgressBar>",
                     "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Fieldset>",
+                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -724,6 +849,45 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/directives/hover-border.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HoverInvertDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
