@@ -68,7 +68,7 @@
         },
         {
             "name": "HoverInvertDirectiveDemo",
-            "id": "component-HoverInvertDirectiveDemo-ab6328576e9555f359f1c22afddf7cf3d700f6dc9abbbc14fb1769a7e18182289d84aebd18e09504ae9104615bb1661bcad6be7ab5a1ca0112e9156531f292a0",
+            "id": "component-HoverInvertDirectiveDemo-fe891768ab56bb3322019904edb2b364894b8b377a1c81bf3b412075c324546f8bb7b6382a820a5b697f3a2e52bea5e145abca85b45b259c54140bcc27b6d9be",
             "file": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -114,7 +114,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { HoverBorder } from './hover-border';\r\nimport { Button } from '../components/button/button';\r\nimport { HoverInvert } from './hover-invert';\r\n\r\n@Component({\r\n  selector: 'hover-hover-demo',\r\n  standalone: true,\r\n  imports: [HoverInvert, Button],\r\n  styleUrls: ['../styles/index.scss'],\r\n  template: `<vault-button vaultHoverInvert> {{ text }}</vault-button> `,\r\n})\r\nclass HoverInvertDirectiveDemo {\r\n  @Input() text = 'Survolez-moi pour voir la bordure';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<HoverInvertDirectiveDemo> = {\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<HoverInvertDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n};\r\n",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { HoverBorder } from './hover-border';\r\nimport { Button } from '../components/button/button';\r\nimport { HoverInvert } from './hover-invert';\r\n\r\n@Component({\r\n  selector: 'hover-hover-demo',\r\n  standalone: true,\r\n  imports: [HoverInvert, Button],\r\n  styleUrls: ['../styles/index.scss'],\r\n  template: `<vault-button vaultHoverInvert> {{ text }}</vault-button> `,\r\n})\r\nclass HoverInvertDirectiveDemo {\r\n  @Input() text = 'Survolez-moi pour voir la bordure';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<HoverInvertDirectiveDemo> = {\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<HoverInvertDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    text: 'Survolez-moi pour inverser les couleurs',\r\n  },\r\n};\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -157,17 +157,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour inverser les couleurs',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -178,6 +168,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -243,21 +243,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ProgressBar>",
-                "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Fieldset>",
                 "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ProgressBar>",
+                "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -339,8 +339,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProgressBar>",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "rawtype": "StoryObj<Fieldset>",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -350,8 +350,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "rawtype": "StoryObj<ProgressBar>",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -434,7 +434,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour voir la bordure',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    text: 'Survolez-moi pour inverser les couleurs',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -598,19 +598,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ProgressBar>",
-                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Story",
@@ -618,6 +605,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Fieldset>",
                     "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ProgressBar>",
+                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

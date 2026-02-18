@@ -1,0 +1,58 @@
+name: Deploy
+run-name: ${{ github.actor }} deploy ${{ github.repository }} process 🚀
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - uses: actions/checkout@v3
+
+      - name: 🪢 Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 🚀 Update version
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        env:
+          commitmsg: ${{ github.event.head_commit.message }}
+
+      - name: Extract owner and repo
+        id: extract
+        run: |
+          REPO=${{ github.repository }}
+          OWNER=$(echo $REPO | cut -d'/' -f1)
+          REPO_NAME=$(echo $REPO | cut -d'/' -f2)
+          echo "OWNER=$OWNER" >> $GITHUB_ENV
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+
+      - name: 🛠️ Install lib dependencies
+        run: |
+          npm ci
+          npm install @octokit/rest
+
+      - name: Configure npm
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 📦 Publish lib
+        run: npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN} && node scripts/publish-package.cjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ env.OWNER }}
+          REPO: ${{ env.REPO_NAME }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 🤖 Commit new version.
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 🤖 | ${{ env.commitmsg }}
