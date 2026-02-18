@@ -43,6 +43,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ env.OWNER }}
           REPO: ${{ env.REPO_NAME }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: 🤖 Commit new version.
         uses: stefanzweifel/git-auto-commit-action@v5
