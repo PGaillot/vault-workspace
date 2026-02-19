@@ -1,0 +1,39 @@
+@use '../../styles/index.scss' as *;
+
+.system-icon {
+    box-sizing: border-box;
+    width: 80px;
+    min-height: 80px;
+    border: 1px solid transparent;
+    color: $primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 4px;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $primary;
+    }
+
+    .icon-wrapper {
+        height: 60px;
+        width: 60px;
+        background: $primary;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+}
+
+.cdk-drag-placeholder {
+    opacity: 0.5;
+}
+
+.cdk-drag-preview {
+    border: 2px dashed $background !important;
+}
