@@ -243,21 +243,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Fieldset>",
-                "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
                 "defaultValue": "{\r\n  title: 'Components/Button',\r\n  component: Button,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Button],\r\n    }),\r\n  ],\r\n  tags: ['autodocs'],\r\n  args: {\r\n    type: 'primary',\r\n  },\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['primary', 'secondary'],\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Fieldset>",
+                "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
             },
             {
                 "name": "meta",
@@ -358,8 +358,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Fieldset>",
-                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -369,8 +369,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Button>",
-                "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
+                "rawtype": "StoryObj<Fieldset>",
+                "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -658,19 +658,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Fieldset>",
-                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -678,6 +665,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Button>",
                     "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Fieldset>",
+                    "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
