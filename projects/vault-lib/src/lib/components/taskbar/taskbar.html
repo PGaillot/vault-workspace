@@ -3,7 +3,7 @@
     <div class="content" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
         @for(item of localItems(); track item){
         <div class="item" cdkDrag [cdkDragData]="item" cdkDragBoundary=".content">
-            <p>{{item.name}}</p>
+            <p>{{item.application.name}}</p>
         </div>
         }
     </div>
