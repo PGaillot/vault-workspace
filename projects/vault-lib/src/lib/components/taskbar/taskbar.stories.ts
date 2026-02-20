@@ -13,17 +13,21 @@ export default meta;
 type Story = StoryObj<Taskbar>;
 
 const DOCUMENT: VaultApplication = {
+  id: 'item-0',
   name: 'Documents',
 };
 const FICHIER: VaultApplication = {
   name: 'Fichier',
+  id: 'item-1',
 };
 const VSCODE: VaultApplication = {
   name: 'VsCode',
   icon: 'vsCode',
+  id: 'item-2',
 };
 const DISCORD: VaultApplication = {
   name: 'Discord',
+  id: 'item-3',
 };
 
 export const Defaut: Story = {

@@ -15,6 +15,7 @@ type Story = StoryObj<SystemWindow>;
 const VSCODE: VaultApplication = {
   name: 'VsCode',
   icon: 'vsCode',
+  id: 'item-0',
 };
 
 export const Default: Story = {

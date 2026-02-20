@@ -15,6 +15,7 @@ export const Default: Story = {
     application: {
       name: 'vsCode',
       icon: 'vsCode',
+      id: 'item-0',
     },
   },
 };

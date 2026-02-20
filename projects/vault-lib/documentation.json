@@ -197,7 +197,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -227,7 +227,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'Discord',\r\n}"
+                "defaultValue": "{\r\n  name: 'Discord',\r\n  id: 'item-3',\r\n}"
             },
             {
                 "name": "DOCUMENT",
@@ -237,7 +237,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'Documents',\r\n}"
+                "defaultValue": "{\r\n  id: 'item-0',\r\n  name: 'Documents',\r\n}"
             },
             {
                 "name": "FICHIER",
@@ -247,7 +247,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'Fichier',\r\n}"
+                "defaultValue": "{\r\n  name: 'Fichier',\r\n  id: 'item-1',\r\n}"
             },
             {
                 "name": "Legend",
@@ -397,7 +397,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n}"
+                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
             },
             {
                 "name": "VSCODE",
@@ -407,7 +407,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n}"
+                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-2',\r\n}"
             },
             {
                 "name": "WirhItems",
@@ -673,7 +673,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -715,7 +715,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "VaultApplication",
-                    "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n}"
+                    "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
@@ -737,7 +737,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "VaultApplication",
-                    "defaultValue": "{\r\n  name: 'Discord',\r\n}"
+                    "defaultValue": "{\r\n  name: 'Discord',\r\n  id: 'item-3',\r\n}"
                 },
                 {
                     "name": "DOCUMENT",
@@ -747,7 +747,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "VaultApplication",
-                    "defaultValue": "{\r\n  name: 'Documents',\r\n}"
+                    "defaultValue": "{\r\n  id: 'item-0',\r\n  name: 'Documents',\r\n}"
                 },
                 {
                     "name": "FICHIER",
@@ -757,7 +757,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "VaultApplication",
-                    "defaultValue": "{\r\n  name: 'Fichier',\r\n}"
+                    "defaultValue": "{\r\n  name: 'Fichier',\r\n  id: 'item-1',\r\n}"
                 },
                 {
                     "name": "meta",
@@ -777,7 +777,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "VaultApplication",
-                    "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n}"
+                    "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-2',\r\n}"
                 },
                 {
                     "name": "WirhItems",
