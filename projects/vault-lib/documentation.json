@@ -193,21 +193,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    application: VSCODE,\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Defaut",
@@ -333,21 +333,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<SystemIcon>",
-                "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SystemWindow>",
                 "defaultValue": "{\r\n  component: SystemWindow,\r\n  title: 'Components/System window',\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SystemIcon>",
+                "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -492,8 +492,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SystemIcon>",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "rawtype": "StoryObj<SystemWindow>",
+                "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -503,8 +503,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SystemWindow>",
-                "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
+                "rawtype": "StoryObj<SystemIcon>",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -664,28 +664,6 @@
                     "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
                 }
             ],
-            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SystemIcon>",
-                    "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
-                }
-            ],
             "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts": [
                 {
                     "name": "Default",
@@ -716,6 +694,28 @@
                     "deprecationMessage": "",
                     "type": "VaultApplication",
                     "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SystemIcon>",
+                    "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
@@ -916,19 +916,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<SystemIcon>",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts": [
                 {
                     "name": "Story",
@@ -936,6 +923,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SystemWindow>",
                     "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SystemIcon>",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
