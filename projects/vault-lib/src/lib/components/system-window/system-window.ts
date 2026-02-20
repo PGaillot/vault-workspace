@@ -7,12 +7,12 @@ import {
   signal,
   WritableSignal,
 } from '@angular/core';
-import { CdkDrag, CdkDragMove } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragHandle, CdkDragMove } from '@angular/cdk/drag-drop';
 import { VaultApplication } from '../../models/application.type';
 
 @Component({
   selector: 'vault-system-window',
-  imports: [CdkDrag],
+  imports: [CdkDrag, CdkDragHandle],
   templateUrl: './system-window.html',
   styleUrl: './system-window.scss',
 })
