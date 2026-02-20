@@ -73,7 +73,7 @@ export class SystemWindow {
     this.initialDragabledWidth = this.currentWidth();
   }
 
-  // ---------------------
+  // ---------------------------------------
   onDragStartedLeft(): void {
     this.initialDragabledWidth = this.currentWidth();
     this.initialDragabledLeft = this.currentLeft();
