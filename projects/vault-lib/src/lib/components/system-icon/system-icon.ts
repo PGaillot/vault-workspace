@@ -6,7 +6,7 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
   selector: 'vault-system-icon',
   imports: [CdkDrag],
   template: `
-    <div class="system-icon" cdkDrag [cdkDragBoundary]="cdkDragBoundary() || ''">
+    <div class="system-icon" cdkDrag [cdkDragBoundary]="vaultCdkDragBoundary() || ''">
       <div class="icon-wrapper">
         @if (application().icon) {
           <img
@@ -23,5 +23,5 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
 })
 export class SystemIcon {
   application: InputSignal<VaultApplication> = input.required<VaultApplication>();
-  cdkDragBoundary: InputSignal<string | undefined> = input<string>();
+  vaultCdkDragBoundary: InputSignal<string | undefined> = input<string>();
 }
