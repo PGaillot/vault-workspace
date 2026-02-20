@@ -6,11 +6,8 @@
 }
 
 .system-window-section {
-    // min-height: 80px;
-    // min-width: 80px;
     display: flex;
     flex-direction: column;
-    // border: 2px solid $primary;
 }
 
 header {
@@ -42,6 +39,7 @@ header {
 .system-window-content {
     flex: 1;
     $border-width: 2px;
+    background: $background;
 }
 
 .resize-bar {

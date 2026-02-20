@@ -8,6 +8,8 @@ import {
   signal,
   WritableSignal,
   effect,
+  SimpleChanges,
+  SimpleChange,
 } from '@angular/core';
 import { Button } from '../button/button';
 import { DatePipe } from '@angular/common';
@@ -45,5 +47,20 @@ export class Taskbar {
     const items = [...this.localItems()];
     moveItemInArray(items, event.previousIndex, event.currentIndex);
     this.localItems.set(items);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const newList: TaskbarItem[] = changes['items'].currentValue;
+    if (!Array.isArray(newList)) return;
+
+    const filtered: TaskbarItem[] = this.localItems().filter((item: TaskbarItem) =>
+      newList.some((newItem: TaskbarItem) => JSON.stringify(newItem) === JSON.stringify(item)),
+    );
+
+    const toAdd: TaskbarItem[] = newList.filter(
+      (newItem: TaskbarItem) =>
+        !filtered.some((item) => JSON.stringify(item) === JSON.stringify(newItem)),
+    );
+    this.localItems.set([...filtered, ...toAdd]);
   }
 }
