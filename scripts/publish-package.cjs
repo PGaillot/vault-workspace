@@ -53,7 +53,17 @@ const { readFileSync, writeFileSync } = fs;
 
             console.log('publishing lib...');
 
+            // Synchroniser le package.json à jour dans dist/vault-lib
             const distPath = path.resolve(process.cwd(), 'dist', 'vault-lib');
+            const srcPackageJsonPath = path.join(process.cwd(), 'projects', 'vault-lib', 'package.json');
+            const destPackageJsonPath = path.join(distPath, 'package.json');
+            try {
+                fs.copyFileSync(srcPackageJsonPath, destPackageJsonPath);
+                console.log('✅ package.json synchronisé dans dist/vault-lib');
+            } catch (error) {
+                console.error('❌ erreur lors de la copie du package.json :', error);
+                throw error;
+            }
 
             // Vérifier si le répertoire existe
             if (!fs.existsSync(distPath)) {
