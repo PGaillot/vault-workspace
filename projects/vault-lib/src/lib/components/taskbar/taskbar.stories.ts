@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { Taskbar } from './taskbar';
+import { VaultApplication } from '../../models/application.type';
 
 const meta: Meta = {
   component: Taskbar,
@@ -11,11 +12,25 @@ export default meta;
 
 type Story = StoryObj<Taskbar>;
 
+const DOCUMENT: VaultApplication = {
+  name: 'Documents',
+};
+const FICHIER: VaultApplication = {
+  name: 'Fichier',
+};
+const VSCODE: VaultApplication = {
+  name: 'VsCode',
+  icon: 'vsCode',
+};
+const DISCORD: VaultApplication = {
+  name: 'Discord',
+};
+
 export const Defaut: Story = {
   args: {
     items: [
       {
-        name: 'Documents',
+        application: DOCUMENT,
       },
     ],
   },
@@ -24,18 +39,10 @@ export const Defaut: Story = {
 export const WirhItems: Story = {
   args: {
     items: [
-      {
-        name: 'Documents',
-      },
-      {
-        name: 'Fichier',
-      },
-      {
-        name: 'VsCode',
-      },
-      {
-        name: 'Discord',
-      },
+      { application: DOCUMENT },
+      { application: FICHIER },
+      { application: VSCODE },
+      { application: DISCORD },
     ],
   },
 };

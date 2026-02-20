@@ -9,7 +9,10 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
     <div class="system-icon" cdkDrag>
       <div class="icon-wrapper">
         @if (application().icon) {
-          <img [src]="application().icon" [alt]="application().name + ' application icon.'" />
+          <img
+            [src]="application().icon + '.svg'"
+            [alt]="application().name + ' application icon.'"
+          />
         }
       </div>
       <label>{{ application().name }}</label>

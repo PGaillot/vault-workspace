@@ -17,7 +17,7 @@ type ButtonType = 'primary' | 'secondary';
   styleUrl: './button.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: ` <button type="button" (click)="onClick.emit($event)" class="vault-button">
-    <ng-content>Button</ng-content>
+    <ng-content></ng-content>
   </button>`,
   host: {
     '[class.vault-button--primary]': 'isPrimary()',

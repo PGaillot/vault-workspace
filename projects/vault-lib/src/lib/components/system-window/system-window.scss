@@ -1,0 +1,67 @@
+@use '../../styles/index.scss' as *;
+
+.system-window {
+    display: flex;
+    position: absolute;
+}
+
+.system-window-section {
+    // min-height: 80px;
+    // min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid $primary;
+}
+
+header {
+    background-color: $primary;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+
+    .handle-drag-zone {
+        flex: 1;
+    }
+
+    .actions {
+        display: flex;
+        gap: 4px;
+
+        button {
+            cursor: pointer;
+            height: 16px;
+            width: 16px;
+            background: $background;
+            color: $primary;
+            font-size: 16px;
+            line-height: 0px;
+        }
+    }
+}
+
+.system-window-content {
+    flex: 1;
+    $border-width: 2px;
+}
+
+.resize-bar {
+    background: $primary;
+
+    &.horizontal {
+        height: $border-width;
+        width: 100%;
+        cursor: ns-resize;
+    }
+
+    &.vertical {
+        width: $border-width;
+        height: inherit;
+        cursor: ew-resize;
+    }
+}
+
+
+.cdk-drag-preview {
+    border: 2rem solid red !important;
+    outline: 2rem solid red !important;
+}

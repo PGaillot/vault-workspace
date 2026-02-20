@@ -12,9 +12,10 @@ import {
 import { Button } from '../button/button';
 import { DatePipe } from '@angular/common';
 import { CdkDropList, CdkDrag, CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { VaultApplication } from '../../models/application.type';
 
 export type TaskbarItem = {
-  name: string;
+  application: VaultApplication;
 };
 
 @Component({

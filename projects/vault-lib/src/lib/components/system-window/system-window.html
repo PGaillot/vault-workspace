@@ -1,0 +1,32 @@
+<div [style.left.px]="currentLeft()" [style.top.px]="currentTop()" class="system-window" cdkDrag>
+
+    <div class="resize-bar vertical" cdkDrag (cdkDragStarted)="onDragStartedLeft()"
+        (cdkDragMoved)="onDragMovedLeft($event)" (cdkDragEnded)="onDragMovedLeftEnded()"></div>
+
+
+    <section class="system-window-section" [style.height.px]="currentHeight()" [style.width.px]="currentWidth()"
+        [style.minHeight.px]="minHeight" [style.minWidth.px]="minWidth">
+
+
+        <div class="resize-bar horizontal" cdkDrag (cdkDragStarted)="onDragStartedTop()"
+            (cdkDragMoved)="onDragMovedTop($event)" (cdkDragEnded)="onDragMovedTopEnded()"></div>
+
+
+        <header>
+            <div cdkDragHandle class="handle-drag-zone">
+                <p>{{application().name}}</p>
+            </div>
+            <div class="actions">
+                <button class="reduce" (click)="reduce.emit()">_</button>
+                <button class="close" (click)="close.emit()">x</button>
+            </div>
+        </header>
+        <div class="system-window-content">
+            <ng-content></ng-content>
+        </div>
+        <div class="resize-bar horizontal" cdkDrag (cdkDragMoved)="onDragMovedBottom($event)"
+            (cdkDragEnded)="onDragMovedBottomEnded()"></div>
+    </section>
+    <div class="resize-bar vertical" cdkDrag (cdkDragMoved)="onDragMovedRight($event)"
+        (cdkDragEnded)="onDragMovedRightEnded()"></div>
+</div>
