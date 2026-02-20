@@ -13,8 +13,18 @@ type Story = StoryObj<SystemIcon>;
 export const Default: Story = {
   args: {
     application: {
-      name: 'vsCode',
-      icon: 'vsCode',
+      name: 'VsCode',
+      icon: 'vscode',
+      id: 'item-0',
+    },
+  },
+};
+
+export const Discord: Story = {
+  args: {
+    application: {
+      name: 'Discord',
+      icon: 'discord',
       id: 'item-0',
     },
   },

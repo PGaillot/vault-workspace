@@ -11,17 +11,21 @@
     align-items: center;
     justify-content: center;
     padding: 8px;
-    gap: 4px;
+    gap: 8px;
     cursor: pointer;
+
 
     &:hover {
         border: 1px solid $primary;
     }
 
     .icon-wrapper {
-        height: 60px;
-        width: 60px;
-        // background: $primary;
+        height: 52px;
+        width: 52px;
+
+        img {
+            width: 100%;
+        }
     }
 
     label {
