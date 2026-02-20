@@ -22,8 +22,8 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
       <div class="icon-wrapper">
         @if (application().icon) {
           <img
-            [src]="application().icon + '.svg'"
-            [alt]="'/icons/' + application().name + ' application icon.'"
+            [src]="'/icons/' + application().icon + '.svg'"
+            [alt]="application().name + ' application icon.'"
           />
         }
       </div>
