@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  InputSignal,
+  output,
+  OutputEmitterRef,
+} from '@angular/core';
 import { VaultApplication } from '../../models/application.type';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 
@@ -6,7 +13,12 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
   selector: 'vault-system-icon',
   imports: [CdkDrag],
   template: `
-    <div class="system-icon" cdkDrag [cdkDragBoundary]="vaultCdkDragBoundary() || ''">
+    <div
+      class="system-icon"
+      cdkDrag
+      [cdkDragBoundary]="vaultCdkDragBoundary() || ''"
+      (dblclick)="doubleClick.emit()"
+    >
       <div class="icon-wrapper">
         @if (application().icon) {
           <img
@@ -24,4 +36,5 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
 export class SystemIcon {
   application: InputSignal<VaultApplication> = input.required<VaultApplication>();
   vaultCdkDragBoundary: InputSignal<string | undefined> = input<string>();
+  doubleClick: OutputEmitterRef<void> = output<void>();
 }
