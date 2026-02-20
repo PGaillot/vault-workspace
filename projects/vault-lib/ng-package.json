@@ -9,6 +9,7 @@
   },
   "assets": [
     "src/lib/styles/**/*.scss",
-    "src/assets/**/*.svg"
+    "src/assets/**/*.svg",
+    "src/assets/*"
   ]
 }

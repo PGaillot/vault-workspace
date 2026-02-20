@@ -23,7 +23,7 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
         @if (application().icon) {
           <img
             [src]="application().icon + '.svg'"
-            [alt]="application().name + ' application icon.'"
+            [alt]="'/icons/' + application().name + ' application icon.'"
           />
         }
       </div>
