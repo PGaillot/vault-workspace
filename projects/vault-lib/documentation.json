@@ -193,21 +193,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    application: VSCODE,\r\n  },\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Defaut",
@@ -333,11 +333,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<SystemIcon>",
-                "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
+                "type": "Meta",
+                "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -353,11 +353,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta",
-                "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
+                "type": "Meta<SystemIcon>",
+                "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "preview",
@@ -393,21 +393,21 @@
                 "name": "VSCODE",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
-            },
-            {
-                "name": "VSCODE",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
                 "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-2',\r\n}"
+            },
+            {
+                "name": "VSCODE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "VaultApplication",
+                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
             },
             {
                 "name": "WirhItems",
@@ -492,8 +492,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SystemIcon>",
-                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                "rawtype": "StoryObj<Taskbar>",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -514,8 +514,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Taskbar>",
-                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "rawtype": "StoryObj<SystemIcon>",
+                "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -664,28 +664,6 @@
                     "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
                 }
             ],
-            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SystemIcon>",
-                    "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
-                }
-            ],
             "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts": [
                 {
                     "name": "Default",
@@ -716,6 +694,28 @@
                     "deprecationMessage": "",
                     "type": "VaultApplication",
                     "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
+                }
+            ],
+            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    application: {\r\n      name: 'vsCode',\r\n      icon: 'vsCode',\r\n      id: 'item-0',\r\n    },\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SystemIcon>",
+                    "defaultValue": "{\r\n  component: SystemIcon,\r\n  title: 'Components/System icon',\r\n  tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
@@ -916,13 +916,13 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
+            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<SystemIcon>",
-                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
+                    "rawtype": "StoryObj<Taskbar>",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -942,13 +942,13 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
+            "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<Taskbar>",
-                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                    "rawtype": "StoryObj<SystemIcon>",
+                    "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

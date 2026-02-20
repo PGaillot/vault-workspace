@@ -12,7 +12,7 @@ export type SpinnerType = 'gear';
       'animation-duration': duration() + 'ms',
       'animation-timing-function': timingFunction(),
     }"
-    [src]="type() + '.svg'"
+    [src]="'/assets/icons/' + type() + '.svg'"
   />`,
   styleUrl: './spinner.scss',
 })
