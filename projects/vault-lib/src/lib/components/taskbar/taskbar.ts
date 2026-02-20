@@ -54,12 +54,12 @@ export class Taskbar {
     if (!Array.isArray(newList)) return;
 
     const filtered: TaskbarItem[] = this.localItems().filter((item: TaskbarItem) =>
-      newList.some((newItem: TaskbarItem) => JSON.stringify(newItem) === JSON.stringify(item)),
+      newList.some((newItem: TaskbarItem) => newItem.application.id === item.application.id),
     );
 
     const toAdd: TaskbarItem[] = newList.filter(
       (newItem: TaskbarItem) =>
-        !filtered.some((item) => JSON.stringify(item) === JSON.stringify(newItem)),
+        !filtered.some((item) => newItem.application.id === item.application.id),
     );
     this.localItems.set([...filtered, ...toAdd]);
   }
