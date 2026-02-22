@@ -10,22 +10,27 @@ const meta: Meta<SystemIcon> = {
 export default meta;
 type Story = StoryObj<SystemIcon>;
 
-export const Default: Story = {
+export const Folder: Story = {
   args: {
-    application: {
-      name: 'VsCode',
-      icon: 'vscode',
-      id: 'item-0',
+    systemContent: {
+      type: 'folder',
+      name: 'Document',
+      id: 'system-folder',
+      protected: false,
+      content: [],
     },
   },
 };
 
 export const Discord: Story = {
   args: {
-    application: {
-      name: 'Discord',
-      icon: 'discord',
-      id: 'item-0',
+    systemContent: {
+      type: 'application',
+      appliaction: {
+        name: 'Discord',
+        icon: 'discord',
+        id: 'item-0',
+      },
     },
   },
 };

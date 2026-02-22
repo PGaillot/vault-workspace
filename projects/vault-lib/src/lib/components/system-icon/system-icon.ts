@@ -1,13 +1,17 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   input,
   InputSignal,
   output,
   OutputEmitterRef,
+  Signal,
 } from '@angular/core';
 import { VaultApplication } from '../../models/application.type';
 import { CdkDrag } from '@angular/cdk/drag-drop';
+import { VaultFolder } from '../../models/vault-folder.type';
+import { VaultFile } from '../../models/vault-file.type';
 
 @Component({
   selector: 'vault-system-icon',
@@ -34,7 +38,22 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SystemIcon {
-  application: InputSignal<VaultApplication> = input.required<VaultApplication>();
+  systemContent: InputSignal<VaultFile | VaultFolder> = input.required<VaultFile | VaultFolder>();
   vaultCdkDragBoundary: InputSignal<string | undefined> = input<string>();
   doubleClick: OutputEmitterRef<void> = output<void>();
+
+  application: Signal<VaultApplication> = computed<VaultApplication>(() => {
+    if (this.systemContent().type === 'application') {
+      const fileContent: VaultFile = this.systemContent() as VaultFile;
+      return fileContent.appliaction;
+    }
+
+    const folderContent: VaultFolder = this.systemContent() as VaultFolder;
+    const folder: VaultApplication = {
+      name: folderContent.name,
+      id: folderContent.id,
+      icon: 'folder',
+    };
+    return folder;
+  });
 }
