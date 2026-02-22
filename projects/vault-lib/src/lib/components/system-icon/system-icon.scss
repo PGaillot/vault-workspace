@@ -1,5 +1,9 @@
 @use '../../styles/index.scss' as *;
 
+:host {
+    user-select: none;
+}
+
 .system-icon {
     box-sizing: border-box;
     width: 80px;

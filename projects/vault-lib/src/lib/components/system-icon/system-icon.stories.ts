@@ -12,7 +12,7 @@ type Story = StoryObj<SystemIcon>;
 
 export const Folder: Story = {
   args: {
-    systemContent: {
+    element: {
       type: 'folder',
       name: 'Document',
       id: 'system-folder',
@@ -24,7 +24,7 @@ export const Folder: Story = {
 
 export const Discord: Story = {
   args: {
-    systemContent: {
+    element: {
       type: 'application',
       appliaction: {
         name: 'Discord',

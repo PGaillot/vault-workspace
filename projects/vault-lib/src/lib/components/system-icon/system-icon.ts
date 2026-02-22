@@ -38,17 +38,17 @@ import { VaultFile } from '../../models/vault-file.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SystemIcon {
-  systemContent: InputSignal<VaultFile | VaultFolder> = input.required<VaultFile | VaultFolder>();
+  element: InputSignal<VaultFile | VaultFolder> = input.required<VaultFile | VaultFolder>();
   vaultCdkDragBoundary: InputSignal<string | undefined> = input<string>();
   doubleClick: OutputEmitterRef<void> = output<void>();
 
   application: Signal<VaultApplication> = computed<VaultApplication>(() => {
-    if (this.systemContent().type === 'application') {
-      const fileContent: VaultFile = this.systemContent() as VaultFile;
+    if (this.element().type === 'application') {
+      const fileContent: VaultFile = this.element() as VaultFile;
       return fileContent.appliaction;
     }
 
-    const folderContent: VaultFolder = this.systemContent() as VaultFolder;
+    const folderContent: VaultFolder = this.element() as VaultFolder;
     const folder: VaultApplication = {
       name: folderContent.name,
       id: folderContent.id,
