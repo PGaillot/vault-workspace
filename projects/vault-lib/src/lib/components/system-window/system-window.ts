@@ -60,8 +60,6 @@ export class SystemWindow {
     this.initialDragabledHeight = this.currentHeight();
   }
 
-  // ----
-
   onDragMovedRight(event: CdkDragMove): void {
     const newWidth: number = event.distance.x + this.initialDragabledWidth;
     if (newWidth >= this.minWidth) {
@@ -77,7 +75,6 @@ export class SystemWindow {
     this.initialDragabledWidth = this.currentWidth();
   }
 
-  // ---------------------------------------
   onDragStartedLeft(): void {
     this.initialDragabledWidth = this.currentWidth();
     this.initialDragabledLeft = this.currentLeft();
@@ -100,8 +97,6 @@ export class SystemWindow {
     this.initialDragabledWidth = this.currentWidth();
     this.initialDragabledLeft = this.currentLeft();
   }
-
-  //----------------------------------------
 
   onDragStartedTop(): void {
     this.initialDragabledHeight = this.currentHeight();
