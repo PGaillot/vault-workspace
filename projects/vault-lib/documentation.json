@@ -59,7 +59,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'hover-border-directive';",
+                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'directives/hover-border-directive';\r\n@forward 'directives/resizable-directive';",
                     "styleUrl": "../styles/index.scss"
                 }
             ],
@@ -118,7 +118,53 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'hover-border-directive';",
+                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'directives/hover-border-directive';\r\n@forward 'directives/resizable-directive';",
+                    "styleUrl": "../styles/index.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ResizableDirectiveDemo",
+            "id": "component-ResizableDirectiveDemo-3c5657b3ad426f8bc72afc5ab008612c1bc358673a0e522f3465f497f55ff8f7153247df62c585f85b5b47fa630971b164a4c548209be9d6b875e99dddbe6a88",
+            "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hover-border-demo",
+            "styleUrls": [
+                "../styles/index.scss"
+            ],
+            "styles": [],
+            "template": "<div style=\"height: 500px;width:500px\">\n  <div style=\"height: 150px;width:250px; border:2px solid red;\" vaultResizable></div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "Resizable"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { Resizable } from './resizable';\r\n\r\n@Component({\r\n  selector: 'hover-border-demo',\r\n  standalone: true,\r\n  imports: [Resizable],\r\n  styleUrls: ['../styles/index.scss'],\r\n  template: `\r\n    <div style=\"height: 500px;width:500px\">\r\n      <div style=\"height: 150px;width:250px; border:2px solid red;\" vaultResizable></div>\r\n    </div>\r\n  `,\r\n})\r\nclass ResizableDirectiveDemo {}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<ResizableDirectiveDemo> = {\r\n  title: 'Directives/Resizable',\r\n  component: ResizableDirectiveDemo,\r\n  argTypes: {},\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<ResizableDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {},\r\n};\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@forward 'variables';\r\n@forward 'animations';\r\n@forward 'colors';\r\n@forward 'mixins';\r\n@forward 'fonts';\r\n@forward 'reset';\r\n@forward 'directives/hover-border-directive';\r\n@forward 'directives/resizable-directive';",
                     "styleUrl": "../styles/index.scss"
                 }
             ],
@@ -163,6 +209,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -173,11 +229,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    content: [\r\n      {\r\n        type: 'folder',\r\n        name: 'Document',\r\n        id: 'document-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n      {\r\n        type: 'folder',\r\n        name: 'Demo',\r\n        id: 'demo-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n    ],\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div style=\"width: 400px; height: 400px; border: 1px solid #44FF57; position: relative; color: #44FF57\">\r\n        <vault-space [content]=\"content\"></vault-space>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Default",
@@ -193,11 +249,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    content: [\r\n      {\r\n        type: 'folder',\r\n        name: 'Document',\r\n        id: 'document-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n      {\r\n        type: 'folder',\r\n        name: 'Demo',\r\n        id: 'demo-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n    ],\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div style=\"width: 400px; height: 400px; border: 1px solid #44FF57; position: relative; color: #44FF57\">\r\n        <vault-space [content]=\"content\"></vault-space>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    progress: 30,\r\n    type: 'fill',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -313,6 +369,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ResizableDirectiveDemo>",
+                "defaultValue": "{\r\n  title: 'Directives/Resizable',\r\n  component: ResizableDirectiveDemo,\r\n  argTypes: {},\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -333,11 +399,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ProgressBar>",
-                "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
+                "type": "Meta<Space>",
+                "defaultValue": "{\r\n  component: Space,\r\n  title: 'Components/Space',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Space],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -353,6 +419,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ProgressBar>",
+                "defaultValue": "{\r\n  component: ProgressBar,\r\n  title: 'Components/Progress bar',\r\n  argTypes: {\r\n    type: {\r\n      control: 'radio',\r\n      options: ['fill', 'block'],\r\n    },\r\n    min: {\r\n      control: 'number',\r\n    },\r\n    max: {\r\n      control: 'number',\r\n    },\r\n    progress: {\r\n      control: 'number',\r\n    },\r\n  },\r\n  args: {\r\n    type: 'fill',\r\n    min: 1,\r\n    max: 100,\r\n    progress: 30,\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -363,31 +439,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta",
-                "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Space>",
-                "defaultValue": "{\r\n  component: Space,\r\n  title: 'Components/Space',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Space],\r\n    }),\r\n  ],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SystemWindow>",
                 "defaultValue": "{\r\n  component: SystemWindow,\r\n  title: 'Components/System window',\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta",
+                "defaultValue": "{\r\n  component: Taskbar,\r\n  title: 'Components/Taskbar',\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "preview",
@@ -423,21 +489,21 @@
                 "name": "VSCODE",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "VaultApplication",
-                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-2',\r\n}"
-            },
-            {
-                "name": "VSCODE",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "VaultApplication",
                 "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-0',\r\n}"
+            },
+            {
+                "name": "VSCODE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "VaultApplication",
+                "defaultValue": "{\r\n  name: 'VsCode',\r\n  icon: 'vsCode',\r\n  id: 'item-2',\r\n}"
             },
             {
                 "name": "WirhItems",
@@ -478,6 +544,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ResizableDirectiveDemo>",
+                "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
                 "file": "projects/vault-lib/src/lib/components/button/button.stories.ts",
                 "deprecated": false,
@@ -500,8 +577,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ProgressBar>",
-                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "rawtype": "StoryObj<Space>",
+                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -522,6 +599,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ProgressBar>",
+                "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<SystemIcon>",
                 "file": "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts",
                 "deprecated": false,
@@ -533,30 +621,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Taskbar>",
-                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Space>",
-                "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 184
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<SystemWindow>",
                 "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Taskbar>",
+                "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -641,6 +718,28 @@
                     "defaultValue": "{\r\n  title: 'Directives/HoverInvert',\r\n  component: HoverInvertDirectiveDemo,\r\n  argTypes: {\r\n    text: { control: 'text' },\r\n  },\r\n}"
                 }
             ],
+            "projects/vault-lib/src/lib/directives/resizable.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ResizableDirectiveDemo>",
+                    "defaultValue": "{\r\n  title: 'Directives/Resizable',\r\n  component: ResizableDirectiveDemo,\r\n  argTypes: {},\r\n}"
+                }
+            ],
             "projects/vault-lib/src/lib/components/fieldset/fieldset.stories.ts": [
                 {
                     "name": "Default",
@@ -673,6 +772,28 @@
                     "defaultValue": "{\r\n  title: 'Components/Fieldset',\r\n  component: Fieldset,\r\n  tags: ['autodocs'],\r\n  argTypes: {},\r\n}"
                 }
             ],
+            "projects/vault-lib/src/lib/components/space/space.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    content: [\r\n      {\r\n        type: 'folder',\r\n        name: 'Document',\r\n        id: 'document-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n      {\r\n        type: 'folder',\r\n        name: 'Demo',\r\n        id: 'demo-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n    ],\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div style=\"width: 400px; height: 400px; border: 1px solid #44FF57; position: relative; color: #44FF57\">\r\n        <vault-space [content]=\"content\"></vault-space>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<Space>",
+                    "defaultValue": "{\r\n  component: Space,\r\n  title: 'Components/Space',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Space],\r\n    }),\r\n  ],\r\n}"
+                }
+            ],
             "projects/vault-lib/src/lib/components/spinner/spinner.stories.ts": [
                 {
                     "name": "Default",
@@ -703,28 +824,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<Spinner>",
                     "defaultValue": "{\r\n  component: Spinner,\r\n  title: 'Components/Spinner',\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    timingFunction: {\r\n      control: 'radio',\r\n      options: ['ease-in-out', 'linear'],\r\n    },\r\n    duration: {\r\n      control: 'number',\r\n      description: 'milliseconds',\r\n    },\r\n  },\r\n  args: {\r\n    duration: 5000,\r\n    timingFunction: 'linear',\r\n    type: 'gear',\r\n  },\r\n}"
-                }
-            ],
-            "projects/vault-lib/src/lib/components/space/space.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    content: [\r\n      {\r\n        type: 'folder',\r\n        name: 'Document',\r\n        id: 'document-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n      {\r\n        type: 'folder',\r\n        name: 'Demo',\r\n        id: 'demo-folder',\r\n        protected: false,\r\n        content: [],\r\n      },\r\n    ],\r\n  },\r\n  render: (args) => ({\r\n    props: args,\r\n    template: `\r\n      <div style=\"width: 400px; height: 400px; border: 1px solid #44FF57; position: relative; color: #44FF57\">\r\n        <vault-space [content]=\"content\"></vault-space>\r\n      </div>\r\n    `,\r\n  }),\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<Space>",
-                    "defaultValue": "{\r\n  component: Space,\r\n  title: 'Components/Space',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [Space],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
             "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts": [
@@ -937,6 +1036,19 @@
                     "kind": 184
                 }
             ],
+            "projects/vault-lib/src/lib/directives/resizable.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ResizableDirectiveDemo>",
+                    "file": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/vault-lib/src/lib/components/button/button.stories.ts": [
                 {
                     "name": "Story",
@@ -963,13 +1075,13 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
+            "projects/vault-lib/src/lib/components/space/space.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ProgressBar>",
-                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "rawtype": "StoryObj<Space>",
+                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -989,6 +1101,19 @@
                     "kind": 184
                 }
             ],
+            "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ProgressBar>",
+                    "file": "projects/vault-lib/src/lib/components/progress-bar/progress-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
             "projects/vault-lib/src/lib/components/system-icon/system-icon.stories.ts": [
                 {
                     "name": "Story",
@@ -1002,32 +1127,6 @@
                     "kind": 184
                 }
             ],
-            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Taskbar>",
-                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
-            "projects/vault-lib/src/lib/components/space/space.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Space>",
-                    "file": "projects/vault-lib/src/lib/components/space/space.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts": [
                 {
                     "name": "Story",
@@ -1035,6 +1134,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SystemWindow>",
                     "file": "projects/vault-lib/src/lib/components/system-window/system-window.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Taskbar>",
+                    "file": "projects/vault-lib/src/lib/components/taskbar/taskbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1482,6 +1594,45 @@
             },
             {
                 "filePath": "projects/vault-lib/src/lib/directives/hover-invert.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ResizableDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/vault-lib/src/lib/directives/resizable.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

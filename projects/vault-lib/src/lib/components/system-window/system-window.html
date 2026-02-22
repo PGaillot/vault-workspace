@@ -22,7 +22,7 @@
             </div>
         </header>
         <div class="system-window-content">
-            <ng-content></ng-content>
+            <vault-space [content]="content()" />
         </div>
         <div class="resize-bar horizontal" cdkDrag (cdkDragMoved)="onDragMovedBottom($event)"
             (cdkDragEnded)="onDragMovedBottomEnded()"></div>

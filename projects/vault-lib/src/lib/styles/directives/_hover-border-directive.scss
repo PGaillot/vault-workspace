@@ -1,7 +1,8 @@
-@use 'colors' as *;
+@use '../colors' as *;
+
 
 $space: 4px;
-$border-width: 2px;
+$hover-border-width: 2px;
 
 :host {
     position: relative;
@@ -16,8 +17,8 @@ $border-width: 2px;
         content: '';
         width: calc(100% + $space * 2);
         height: calc(100% + $space * 2);
-        top: -$space - $border-width;
-        left: -$space - $border-width;
-        border: $border-width solid $primary;
+        top: -$space - $hover-border-width;
+        left: -$space - $hover-border-width;
+        border: $hover-border-width solid $primary;
     }
 }

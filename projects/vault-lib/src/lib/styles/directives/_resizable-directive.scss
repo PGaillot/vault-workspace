@@ -1,0 +1,29 @@
+@use '../colors' as *;
+
+
+$border-width: 4px;
+
+
+.resize-wrapper {
+    position: relative;
+    display: inline-block;
+    background: khaki;
+}
+
+.resize-bar {
+    background: hotpink;
+
+    &.horizontal {
+        height: $border-width;
+        min-width: $border-width;
+        width: 100%;
+        cursor: ns-resize;
+    }
+
+    &.vertical {
+        width: $border-width;
+        min-height: $border-width;
+        height: inherit;
+        cursor: ew-resize;
+    }
+}

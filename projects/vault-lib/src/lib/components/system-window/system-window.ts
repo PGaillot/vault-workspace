@@ -9,15 +9,19 @@ import {
 } from '@angular/core';
 import { CdkDrag, CdkDragHandle, CdkDragMove } from '@angular/cdk/drag-drop';
 import { VaultApplication } from '../../models/application.type';
+import { VaultFile } from '../../models/vault-file.type';
+import { VaultFolder } from '../../models/vault-folder.type';
+import { Space } from '../space/space';
 
 @Component({
   selector: 'vault-system-window',
-  imports: [CdkDrag, CdkDragHandle],
+  imports: [CdkDrag, CdkDragHandle, Space],
   templateUrl: './system-window.html',
   styleUrl: './system-window.scss',
 })
 export class SystemWindow {
   application: InputSignal<VaultApplication> = input.required<VaultApplication>();
+  content: InputSignal<(VaultFile | VaultFolder)[]> = input.required<(VaultFile | VaultFolder)[]>();
 
   close: OutputEmitterRef<void> = output<void>();
   reduce: OutputEmitterRef<void> = output<void>();
